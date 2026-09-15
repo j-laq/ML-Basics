@@ -117,3 +117,11 @@ def test(dataloader, model, loss_fn):
         train(train_dataloader, model, loss_fn, optimizer)
         test(test_dataloader, model, loss_fn)
     print("Done!")
+
+# SAVE the models, serialize the internal state dictionary, which conains the model aparameters
+torch.save(model.state_dict(), "model.pth")
+print("Saved PyTorch Model State to model.pth")
+
+#LOAD a model
+#model = NeuralNetwork().to(device)
+#model.load_state_dict(torch.load("model.pth", weights_only=True))
